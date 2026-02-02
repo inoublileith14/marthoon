@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+---
+
+<div class="flex flex-col items-between"></div>
+
+<button
+  id="burger"
+  aria-expanded="false"
+  aria-controls="main-menu"
+  class="w-10 h-10 flex flex-col items-center justify-center text-amber-400 relative z-20"
+>
+  <span
+    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+  ></span>
+  <span
+    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+  ></span>
+  <span
+    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+  ></span>
+</button>
+
+<script type="module">
+  const burger = document.getElementById('burger');
+  let open = false;
+  burger.addEventListener('click', () => {
+    open = !open;
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<style>
+  /* Animación burger a X */
+  #burger.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #burger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  #burger.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+</style>

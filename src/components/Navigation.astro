@@ -1,9 +1,8 @@
 ---
-
+const { class: className = '' } = Astro.props;
 ---
 
-<nav class="bg-black flex justify-around items-center p-7">
-  <img class="w-24 h-auto max-w-full" src="../../public/images/btmlogo.webp" />
+<div id="main-menu" class=`text-white flex justify-center ${className}`>
   <a href="/">Home</a>
   <a href="tangodj">Tango DJ</a>
   <a href="highlights">Highlights</a>
@@ -11,10 +10,10 @@
   <a href="programme">Programme</a>
   <a href="pasteditions">Past Editions</a>
   <a href="registration">Registration</a>
-</nav>
+</div>
 
 <style>
   a {
-    font-size: 1.2rem;
+    padding: 1em;
   }
 </style>

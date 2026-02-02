@@ -1,0 +1,13 @@
+---
+import Menu from './Menu.astro';
+import Navigation from './Navigation.astro';
+// Ensure Menu.astro exists in the same directory, or update the path if necessary
+---
+
+<header class="bg-black flex justify-between p-6 items-center">
+  <img class="w-20 h-auto max-w-none" src="../../public/images/btmlogo.webp" />
+  <nav>
+    <Navigation class="hidden md:block" />
+  </nav>
+  <Menu class="md:hidden" />
+</header>
