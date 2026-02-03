@@ -7,11 +7,3 @@
 body {
   font-family: 'Atkinson', sans-serif;
 }
-
-/* estilos de la barra de navegación*/
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}

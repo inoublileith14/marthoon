@@ -2,18 +2,41 @@
 const { class: className = '' } = Astro.props;
 ---
 
-<div id="main-menu" class=`text-white flex justify-center ${className}`>
-  <a href="/">Home</a>
-  <a href="tangodj">Tango DJ</a>
-  <a href="highlights">Highlights</a>
-  <a href="venue">Venue</a>
-  <a href="programme">Programme</a>
-  <a href="pasteditions">Past Editions</a>
-  <a href="registration">Registration</a>
+<div
+  id="main-menu"
+  class={`text-white flex justify-center ${className} space-x-2`}
+>
+  <a
+    href="/"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition">Home</a
+  >
+  <a
+    href="tangodj"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition"
+    >Tango DJ</a
+  >
+  <a
+    href="highlights"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition"
+    >Highlights</a
+  >
+  <a
+    href="venue"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition">Venue</a
+  >
+  <a
+    href="programme"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition"
+    >Programme</a
+  >
+  <a
+    href="pasteditions"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition"
+    >Past Editions</a
+  >
+  <a
+    href="registration"
+    class="text-sm lg:text-lg px-2 py-1 hover:text-rose-700 transition"
+    >Registration</a
+  >
 </div>
-
-<style>
-  a {
-    padding: 1em;
-  }
-</style>

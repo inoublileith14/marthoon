@@ -1,25 +1,28 @@
 ---
 import '../styles/global.css';
+const { class: className = '' } = Astro.props;
 ---
 
 <div class="flex flex-col items-between"></div>
 
-<button
-  id="burger"
-  aria-expanded="false"
-  aria-controls="main-menu"
-  class="w-10 h-10 flex flex-col items-center justify-center text-amber-400 relative z-20"
->
-  <span
-    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
-  ></span>
-  <span
-    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
-  ></span>
-  <span
-    class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
-  ></span>
-</button>
+<div class=`p-2 border-2 rounded-xl border-amber-200 ${className}`>
+  <button
+    id="burger"
+    aria-expanded="false"
+    aria-controls="main-menu"
+    class="w-8 h-8 flex flex-col items-center justify-center text-amber-200 relative z-20"
+  >
+    <span
+      class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+    ></span>
+    <span
+      class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+    ></span>
+    <span
+      class="block w-8 h-1 bg-current rounded transition-all duration-300 my-1"
+    ></span>
+  </button>
+</div>
 
 <script type="module">
   const burger = document.getElementById('burger');
@@ -31,7 +34,7 @@ import '../styles/global.css';
   });
 </script>
 
-<style>
+<style is:global>
   /* Animación burger a X */
   #burger.open span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
