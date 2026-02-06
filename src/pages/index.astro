@@ -1,37 +1,58 @@
 ---
+import Card from '../components/Card.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Home Page">
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad velit
-  tenetur ratione saepe quidem blanditiis animi esse assumenda consequuntur
-  atque cumque, eius vitae, consequatur repellendus perspiciatis aliquid ab
-  laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad
-  velit tenetur ratione saepe quidem blanditiis animi esse assumenda
-  consequuntur atque cumque, eius vitae, consequatur repellendus perspiciatis
-  aliquid ab laborum? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-  Ipsum ad velit tenetur ratione saepe quidem blanditiis animi esse assumenda
-  consequuntur atque cumque, eius vitae, consequatur repellendus perspiciatis
-  aliquid ab laborum? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-  Ipsum ad velit tenetur ratione saepe quidem blanditiis animi esse assumenda
-  consequuntur atque cumque, eius vitae, consequatur repellendus perspiciatis
-  aliquid ab laborum? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-  Ipsum ad velit tenetur ratione saepe quidem blanditiis animi esse assumenda
-  consequuntur atque cumque, eius vitae, consequatur repellendus perspiciatis
-  aliquid ab laborum? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-  Ipsum ad velit tenetur ratione saepe quidem blanditiis animi esse assumenda
-  consequuntur atque cumque, eius vitae, consequatur repellendus perspiciatis
-  aliquid ab laborum? aliquid ab laborum? Lorem ipsum dolor sit amet
-  consectetur, adipisicing elit. Ipsum ad velit tenetur ratione saepe quidem
-  blanditiis animi esse assumenda consequuntur atque cumque, eius vitae,
-  consequatur repellendus perspiciatis aliquid ab laborum? Lorem ipsum dolor sit
-  amet consectetur, adipisicing elit. Ipsum ad velit tenetur ratione saepe
-  quidem blanditiis animi esse assumenda consequuntur atque cumque, eius vitae,
-  consequatur repellendus perspiciatis aliquid ab laborum? Lorem ipsum dolor sit
-  amet consectetur, adipisicing elit. Ipsum ad velit tenetur ratione saepe
-  quidem blanditiis animi esse assumenda consequuntur atque cumque, eius vitae,
-  consequatur repellendus perspiciatis aliquid ab laborum? Lorem ipsum dolor sit
-  amet consectetur, adipisicing elit. Ipsum ad velit tenetur ratione saepe
-  quidem blanditiis animi esse assumenda consequuntur atque cumque, eius vitae,
-  consequatur repellendus perspiciatis aliquid ab laborum?
+  <main class="p-6">
+    <h1 class="text-2xl md:text-5xl lg:text-6xl text-amber-300 mb-2">
+      Barcelona Tango Marathon
+    </h1>
+    <h2 class="text-xl md:text-3xl lg:text-4xl mb-7">
+      5th Edition - 2 to 6 April
+    </h2>
+  </main>
+  <h3 class="mb-2 text-2xl">Count Down</h3>
+  <!-- Display the countdown timer in an element -->
+  <p id="demo" class="text-4xl md:text-5xl mb-10"></p>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date('Apr 6, 2026 15:37:25').getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      var demoElem = document.getElementById('demo');
+      if (demoElem) {
+        demoElem.innerHTML =
+          days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
+      }
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        if (demoElem) {
+          demoElem.innerHTML = 'EXPIRED';
+        }
+      }
+    }, 1000);
+  </script>
+  <h2 class="text-4xl text-amber-300 mb-2">SPINING YOUR TANGO DREAMS</h2>
+  <h3>Scroll Right or Left to see all the DJs</h3>
+  <Card />
 </MainLayout>

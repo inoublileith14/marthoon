@@ -4,4 +4,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
+  adapter: cloudflare(),
+  output: 'server',
 });
